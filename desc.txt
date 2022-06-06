@@ -1,0 +1,11 @@
+Blog App:
+EP 1:
+Temel olarak ASP.Net Core MVC projesidir.
+.Net 5.0 ile geliþtirilecek olan bu proje temellerinde N-Tier Architecture kullanýlacaktýr
+Veri tabaný olarak MS-Sql kullanýlacak olup Docker üzerinden ayaða kaldýrýlacaktýr.
+Sql server yönetimi için DBeaver kullanýlacaktýr.
+ORM(Object Relational Mapping) olarak Entity FrameWork kullanýlacaktýr.
+----------------------------
+docker pull mcr.microsoft.com/mssql/server:2019-latest
+docker run --name sql_server -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=123456Abc' -p 1401:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+---------------------------
