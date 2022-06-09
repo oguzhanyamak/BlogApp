@@ -5,7 +5,22 @@ Temel olarak ASP.Net Core MVC projesidir.
 Veri tabaný olarak MS-Sql kullanýlacak olup Docker üzerinden ayaða kaldýrýlacaktýr.
 Sql server yönetimi için DBeaver kullanýlacaktýr.
 ORM(Object Relational Mapping) olarak Entity FrameWork kullanýlacaktýr.
-----------------------------
+-------------------------------------------------------------------------------
 docker pull mcr.microsoft.com/mssql/server:2019-latest
 docker run --name sql_server -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=123456Abc' -p 1401:1433 -d mcr.microsoft.com/mssql/server:2019-latest
----------------------------
+--------------------------------------------------------------------------------
+EP 2:
+N-Tier Architecture
+	*Entity Layer
+		Makale		Kategori		Yorum		Yazar		Hakkýnda		Ýletiþim		Adres
+	*Data Acces Layer
+	*Business Layer
+	*Presentation Layer
+	*Core Layer
+	*Api
+Entity FrameWork için gerekli Paketlerin yüklenmesi
+	Microsoft.EntityFramewworkCore
+	Microsoft.EntityFramewworkCore.Desing
+	Microsoft.EntityFramewworkCore.SqlServer
+	Microsoft.EntityFramewworkCore.Tools
+---------------------------------------------------------------------------------
