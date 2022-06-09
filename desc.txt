@@ -24,3 +24,9 @@ Entity FrameWork için gerekli Paketlerin yüklenmesi
 	Microsoft.EntityFramewworkCore.SqlServer
 	Microsoft.EntityFramewworkCore.Tools
 ---------------------------------------------------------------------------------
+EP 3 :
+Connection string AppSettings.json dosyasýna eklenmiþtir.
+DbContext sýnýfý oluþturulmuþ ve tanýmlanmýþtýr.
+Projede bulunan entitylerin validation iþlemleri FluentValidation ile  gerçekleþtirilmiþtir.
+Deneme amaçlý Migration ve reflection yapýlarak baðlantý ve yapýlanlar kontrol edildi.
+------------------------------------------------------------------------------------
