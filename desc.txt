@@ -23,10 +23,16 @@ Entity FrameWork için gerekli Paketlerin yüklenmesi
 	Microsoft.EntityFramewworkCore.Desing
 	Microsoft.EntityFramewworkCore.SqlServer
 	Microsoft.EntityFramewworkCore.Tools
----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 EP 3 :
 Connection string AppSettings.json dosyasýna eklenmiþtir.
 DbContext sýnýfý oluþturulmuþ ve tanýmlanmýþtýr.
 Projede bulunan entitylerin validation iþlemleri FluentValidation ile  gerçekleþtirilmiþtir.
 Deneme amaçlý Migration ve reflection yapýlarak baðlantý ve yapýlanlar kontrol edildi.
-------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+EP 4 :
+w3layouts üzerinden alýnan hazýr þablon uygulama arayüzü için uygun hale getirildi
+Gerekli css, js ve fontlar dahil edildi.
+Header ve footer bölünerek partial view haline getirildi
+IBlogService ve BlogManager sýnýflarý üzerinden veri tabaný ve arayüz iliþkileri test edildi.
+-----------------------------------------------------------------------------------

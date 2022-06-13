@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
-{
+{ 
     public class ContactRepository:GenericRepository<Contact>,IContactDal
     {
     }
