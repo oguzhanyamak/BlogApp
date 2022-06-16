@@ -36,3 +36,13 @@ Gerekli css, js ve fontlar dahil edildi.
 Header ve footer bölünerek partial view haline getirildi
 IBlogService ve BlogManager sýnýflarý üzerinden veri tabaný ve arayüz iliþkileri test edildi.
 -----------------------------------------------------------------------------------
+Ýliþkisel tablolarda çalýþýrken EfCore özelinde listemele yapýlýrken method Include olarak bildirilerek yazýlmalýdýr.
+-----------------------------------------------------------------------------------
+Listenen Bloglarýn altýnda bulunan yorum kýsýmlarý view component olarak eklenmiþtir.
+ayný zamanda category kýsmý da veri tabanýna baðlý þekilde gelmektedir.
+veri tabaný ve category kýsmý için ViewComponent yapýsý kullanýlmýþtýr.
+ViewComponent yapýsý esasýnda PartialView ile ayný amaca hizmet etmektedir lakin teknik anlamda farklar bulunmaktadýr.
+ViewComponent'lar Shared/Components/ComponentAdý(Personeller)/default.cshtml
+ViewComponents/PersonellerViewComponents.cs
+@await Component.InvokeAsync("Personeller");
+https://miro.com/app/board/uXjVOsBeZTE=/?share_link_id=848986511297

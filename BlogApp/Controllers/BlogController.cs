@@ -11,7 +11,14 @@ namespace BlogApp.Controllers
 
         public IActionResult Index()
         {
-            var values = _blogManager.GetList();
+            var values = _blogManager.GetBlockListWithCategory();
+            return View(values);
+        }
+
+        public IActionResult BlogDetails([FromRoute]int id)
+        {
+            ViewBag.i = id;
+            var values = _blogManager.GetById(id);
             return View(values);
         }
     }
