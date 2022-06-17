@@ -5,9 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Abstract
+namespace BusinessLayer.Abstract
 {
-    public interface IAuthorDal:IGenericDal<Author>
+    public interface IAuthorService 
     {
+        void AuthorAdd(Author author);
+        void AuthorUpdate(Author author);
+
+
     }
 }

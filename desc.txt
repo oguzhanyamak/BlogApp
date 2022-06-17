@@ -38,6 +38,7 @@ IBlogService ve BlogManager sýnýflarý üzerinden veri tabaný ve arayüz iliþkileri
 -----------------------------------------------------------------------------------
 Ýliþkisel tablolarda çalýþýrken EfCore özelinde listemele yapýlýrken method Include olarak bildirilerek yazýlmalýdýr.
 -----------------------------------------------------------------------------------
+EP 5:
 Listenen Bloglarýn altýnda bulunan yorum kýsýmlarý view component olarak eklenmiþtir.
 ayný zamanda category kýsmý da veri tabanýna baðlý þekilde gelmektedir.
 veri tabaný ve category kýsmý için ViewComponent yapýsý kullanýlmýþtýr.
@@ -46,3 +47,9 @@ ViewComponent'lar Shared/Components/ComponentAdý(Personeller)/default.cshtml
 ViewComponents/PersonellerViewComponents.cs
 @await Component.InvokeAsync("Personeller");
 https://miro.com/app/board/uXjVOsBeZTE=/?share_link_id=848986511297
+-----------------------------------------------------------------------------------
+EP 6 :
+Kayýt ekranýnýn basit olarak hazýrlanýp ayarlanmasý.
+FluentValidasyon ile bazý kontrollerin saðlanmasý gerçekleþmiþtir.
+Business/FluentValidation.AspNetCore
+UI/FluentValidation & FluentValidation.AspNetCore

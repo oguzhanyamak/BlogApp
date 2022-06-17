@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace EntityLayer.Concrete
         public string AuthorAbout { get; set; }
         public string AuthorMail { get; set; }
         public string AuthorPassword { get; set; }
+        [NotMapped]
+        public string AuthorRePassword { get; set; }
         public string AuthorImage { get; set; }
         public bool AuthorStatus { get; set; }
 
