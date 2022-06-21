@@ -53,3 +53,8 @@ Kayýt ekranýnýn basit olarak hazýrlanýp ayarlanmasý.
 FluentValidasyon ile bazý kontrollerin saðlanmasý gerçekleþmiþtir.
 Business/FluentValidation.AspNetCore
 UI/FluentValidation & FluentValidation.AspNetCore
+---------------------------------------------------------------------------------
+EP 6.1:
+https://colorlib.com/wp/template/colorlib-error-404-4/ hata sayfasý þablonu
+Þablonun projeye dahil edilmesi
+---------------------------------------------------------------------------------

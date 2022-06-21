@@ -13,7 +13,7 @@ namespace DataAccessLayer.FluentApiConfiguration
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(x => x.CategoryID);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.CategoryName).IsRequired();
             builder.Property(x => x.CategoryDescription).IsRequired();
         }

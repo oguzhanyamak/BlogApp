@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using EntityLayer.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace DataAccessLayer.Repositories
             return _Context.Set<T>().ToList();
         }
 
+
         public T GetByID(int id)
         {
             return _Context.Find<T>(id);
@@ -38,5 +40,6 @@ namespace DataAccessLayer.Repositories
             _Context.Update(t);
             _Context.SaveChanges();
         }
+
     }
 }

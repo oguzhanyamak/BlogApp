@@ -13,7 +13,7 @@ namespace DataAccessLayer.FluentApiConfiguration
     {
         public void Configure(EntityTypeBuilder<Contact> builder)
         {
-            builder.HasKey(x => x.ContactID);
+            builder.HasKey(x => x.Id);
             //builder.Property(x => x.ContactUserName).IsRequired();
             builder.Property(x => x.ContactMail).IsRequired();
             builder.Property(x => x.ContactMessage).IsRequired();

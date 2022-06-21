@@ -1,5 +1,4 @@
-﻿using EntityLayer.Common;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IBlogDal : IGenericDal<Blog>
+    public interface INewsLatterDal : IGenericDal<NewsLetter>
     {
-        List<Blog> GetBlogWith(string table,int Id);
+
     }
 }

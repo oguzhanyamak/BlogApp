@@ -13,7 +13,7 @@ namespace DataAccessLayer.FluentApiConfiguration
     {
         public void Configure(EntityTypeBuilder<Author> builder)
         {
-            builder.HasKey(x => x.AuthorID);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.AuthorName).IsRequired();
             builder.Property(x => x.AuthorMail).IsRequired();
             builder.Property(x => x.AuthorPassword).IsRequired();

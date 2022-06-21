@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Category : BaseClass
+    public class NewsLetter : BaseClass
     {
-        public string CategoryName { get; set; }
-        public string CategoryDescription { get; set; }
-        public List<Blog> Blogs { get; set; }
-
+        public string Mail { get; set; }
     }
 }

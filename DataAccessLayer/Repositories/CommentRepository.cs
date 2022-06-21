@@ -16,7 +16,7 @@ namespace DataAccessLayer.Repositories
         {
             using (var c = new Context())
             {
-                return c.Comments.Include(x => x.Blog).Where(x=> x.Blog.BlogID == id).ToList();
+                return c.Comments.Include(x => x.Blog).Where(x=> x.Blog.Id == id).ToList();
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using EntityLayer.Common;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -33,9 +34,9 @@ namespace BusinessLayer.Concrete
             _blogDal.Update(blog);
         }
 
-        public List<Blog> GetBlockListWithCategory()
+        public List<Blog> GetBlogWith(string table, int id=0)
         {
-            return _blogDal.GetListWithCategory();
+            return _blogDal.GetBlogWith(table, id);
         }
 
         public Blog GetById(int id)

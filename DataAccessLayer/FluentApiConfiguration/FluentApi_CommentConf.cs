@@ -13,7 +13,7 @@ namespace DataAccessLayer.FluentApiConfiguration
     {
         public void Configure(EntityTypeBuilder<Comment> builder)
         {
-            builder.HasKey(x => x.CommentID);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.CommentUserName).IsRequired();
             builder.Property(x => x.CommentContent).IsRequired();
         }

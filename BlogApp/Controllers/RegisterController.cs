@@ -25,7 +25,7 @@ namespace BlogApp.Controllers
             {
                 if (author.AuthorPassword == author.AuthorRePassword)
                 {
-                    author.AuthorStatus = true;
+                    author.Status = true;
                     author.AuthorAbout = "";
                     author.AuthorImage = "";
                     authorManager.AuthorAdd(author);

@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Repositories;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApp.Controllers
@@ -11,14 +12,13 @@ namespace BlogApp.Controllers
 
         public IActionResult Index()
         {
-            var values = _blogManager.GetBlockListWithCategory();
+            var values = _blogManager.GetBlogWith("Category");
             return View(values);
         }
 
         public IActionResult BlogDetails([FromRoute]int id)
         {
-            ViewBag.i = id;
-            var values = _blogManager.GetById(id);
+            var values = _blogManager.GetBlogWith("Category",id);
             return View(values);
         }
     }

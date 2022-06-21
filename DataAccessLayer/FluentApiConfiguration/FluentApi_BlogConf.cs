@@ -13,7 +13,7 @@ namespace DataAccessLayer.FluentApiConfiguration
     {
         public void Configure(EntityTypeBuilder<Blog> builder)
         {
-            builder.HasKey(x => x.BlogID);
+            builder.HasKey(x => x.Id);
             builder.Property(x => x.BlogTitle).IsRequired();
             builder.Property(x => x.BlogContent).IsRequired();
         }
