@@ -58,3 +58,15 @@ EP 6.1:
 https://colorlib.com/wp/template/colorlib-error-404-4/ hata sayfasý þablonu
 Þablonun projeye dahil edilmesi
 ---------------------------------------------------------------------------------
+EP 7 : Authenticate / Authorize
+Proje seviyesinde authorize iþlemi gerektirdiði için hiçbir contoller/view yapýsýna eriþilememektedir.
+[AllowAnonymous] attribute'u [Login/Index] sayfasýný bütün sýnýrlama ve kýsýtlamalardan arýndýrmaktadýr.
+Session :
+Session’ýn kelime anlamý oturumdur.Her hangi bir ziyaretçi sitemize ilk girdiði anda, o ziyaretçiyle ilgili Session baþlatýlmýþ olur.
+Ziyaretçimizle ilgili bir bilginin baþka bir sayfada elde edilmesini istiyorsak Sessionlarý kullanabiliriz.
+Server taraflý çalýþan Sessionlar, bir sayfada aldýklarý bilgileri diðer sayfada kaybetmezler.Session deðerlerini sayfalar arasýnda taþýmamýza gerek yoktur.
+O bilgiler oturum aktif olduðu sürece hafýzada kalýrlar.Sessionlar sunucu üzerinde tutulurlar.
+Claim : 
+Claimler; rollerin dýþýnda kullanýcý hakkýnda bilgi tutmamýzý ve bu bilgilere göre yetkilendirme yapmamýzý saðlayan yapýlardýr.
+Kullanýcýya dair tanýmlanmýþ ekstra bilgiler olan claimleri kullanarak yetkilendirme iþlevini gerçekleþtirebilmek için cookie deðeri kullanýlmaktadýr. 
+Sisteme giriþ yapacak olan kullanýcýya özel tanýmlanmýþ claimler oluþturulan Cookie deðerinin içerisine eklenmekte ve lazým olduðu taktirde oradan eriþilmektedir. 
