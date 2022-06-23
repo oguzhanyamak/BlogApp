@@ -6,9 +6,12 @@ namespace BlogApp.Controllers
     
     public class AuthorController : Controller
     {
+        [AllowAnonymous]
         public IActionResult Index()
-        {
+        { 
             return View();
         }
+
+        
     }
 }

@@ -1,10 +1,13 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace BlogApp.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         private BlogManager _blogManager = new BlogManager(new BlogRepository());
@@ -21,5 +24,8 @@ namespace BlogApp.Controllers
             var values = _blogManager.GetBlogWith("Category",id);
             return View(values);
         }
+
+
+
     }
 }

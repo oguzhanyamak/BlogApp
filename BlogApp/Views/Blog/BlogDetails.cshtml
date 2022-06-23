@@ -60,7 +60,7 @@
                             </p>
                         </div>
                         @await Component.InvokeAsync("CommentListByBlog",new {id = item.Id})
-                        @await Html.PartialAsync("Partial_AddComment")
+                        @await Html.PartialAsync("~/Views/Shared/Partials/Common/Partial_AddComment.cshtml")
                     </div>
 
                 }

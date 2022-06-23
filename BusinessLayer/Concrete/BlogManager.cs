@@ -48,5 +48,9 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.GetAll();
         }
+        public List<Blog> getLastBlogs(int count)
+        {
+            return _blogDal.GetAll().Take(count).ToList();
+        }
     }
 }
