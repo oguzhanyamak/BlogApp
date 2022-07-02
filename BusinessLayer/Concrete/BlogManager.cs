@@ -19,38 +19,39 @@ namespace BusinessLayer.Concrete
             _blogDal = blogDal;
         }
 
-        public void BlogAdd(Blog blog)
-        {
-            _blogDal.insert(blog);
-        }
-
-        public void BlogDelete(Blog blog)
-        {
-            _blogDal.Delete(blog);
-        }
-
-        public void BlogUpdate(Blog blog)
-        {
-            _blogDal.Update(blog);
-        }
-
         public List<Blog> GetBlogWith(string table, int id=0)
         {
             return _blogDal.GetBlogWith(table, id);
         }
 
-        public Blog GetById(int id)
+        public List<Blog> getLastBlogs(int count) 
         {
-            return _blogDal.GetByID(id);
+            return _blogDal.GetAll().Take(count).ToList();
+        }
+
+        public void Add(Blog t)
+        {
+            _blogDal.Insert(t);
+        }
+
+        public void Update(Blog t)
+        {
+            _blogDal.Update(t);
+        }
+
+        public void Delete(Blog t)
+        {
+            _blogDal.Delete(t);   
         }
 
         public List<Blog> GetList()
         {
             return _blogDal.GetAll();
         }
-        public List<Blog> getLastBlogs(int count)
+
+        public Blog GetById(int id)
         {
-            return _blogDal.GetAll().Take(count).ToList();
+            return _blogDal.GetByID(id);
         }
     }
 }

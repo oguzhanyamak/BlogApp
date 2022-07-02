@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void AuthorAdd(Author author)
         {
-            authorDal.insert(author);
+            authorDal.Insert(author);
         }
 
         public void AuthorUpdate(Author author)

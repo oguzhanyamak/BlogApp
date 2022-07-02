@@ -21,7 +21,7 @@ namespace BusinessLayer.Concrete
 
         public void AddNewsLetter(NewsLetter N)
         {
-            _newsletterDal.insert(N);
+            _newsletterDal.Insert(N);
         }
     }
 }

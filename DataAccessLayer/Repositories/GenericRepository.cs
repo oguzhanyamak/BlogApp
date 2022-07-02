@@ -29,7 +29,7 @@ namespace DataAccessLayer.Repositories
             return _Context.Find<T>(id);
         }
 
-        public void insert(T t)
+        public void Insert(T t)
         {
             _Context.Add(t);
             _Context.SaveChanges();

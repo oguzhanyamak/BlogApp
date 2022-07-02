@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrete
 
         public void CommentAdd(Comment comment)
         {
-            _commentDal.insert(comment); 
+            _commentDal.Insert(comment); 
         }
 
         public List<Comment> GetCommentByBlog(int id)

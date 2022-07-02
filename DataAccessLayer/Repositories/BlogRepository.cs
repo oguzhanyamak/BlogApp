@@ -13,7 +13,7 @@ namespace DataAccessLayer.Repositories
 {
     public class BlogRepository : GenericRepository<Blog>, IBlogDal
     {
-        public List<Blog> GetBlogWith(string table, int Id = 0)
+        public List<Blog> GetBlogWith(string table, int Id=0)
         {
             using(var c = new Context()){
 
@@ -22,15 +22,16 @@ namespace DataAccessLayer.Repositories
                     case "Author" when (Id == 0):
                         return c.Blogs.Include(s => s.Author).ToList();
                     case "Author" when (Id != 0):
-                        return c.Blogs.Include(s => s.Author).Where(x => x.Id == Id).ToList();
+                        return c.Blogs.Include(s => s.Author).Where(x => x.Author.Id == Id).ToList();
                     case "Category" when (Id == 0):
                         return c.Blogs.Include(s => s.Category).ToList();
                     case "Category" when (Id != 0):
-                        return c.Blogs.Include(s => s.Category).Where(x => x.Id == Id).ToList();
+                        return c.Blogs.Include(s => s.Category).Where(x => x.Category.Id == Id).ToList();
                     case "Comment" when (Id != 0):
                         return c.Blogs.Include(s => s.Comments).Where(x => x.Id == Id).ToList();
                     case "Comment" when (Id == 0):
                         return c.Blogs.Include(s => s.Comments).ToList();
+                    
                 }
             }
             return new() { };
