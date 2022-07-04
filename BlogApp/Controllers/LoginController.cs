@@ -36,7 +36,7 @@ namespace BlogApp.Controllers
                     ClaimsPrincipal principal = new(userIdentity);
                     await HttpContext.SignInAsync(principal);
                  //   HttpContext.Session.SetString("username", author.AuthorMail);
-                    return RedirectToAction("GetBlogsByAuthor", "Author");
+                    return RedirectToAction("Index", "Author");
                 }
                 else
                 {

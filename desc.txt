@@ -70,3 +70,4 @@ Claim :
 Claimler; rollerin dýþýnda kullanýcý hakkýnda bilgi tutmamýzý ve bu bilgilere göre yetkilendirme yapmamýzý saðlayan yapýlardýr.
 Kullanýcýya dair tanýmlanmýþ ekstra bilgiler olan claimleri kullanarak yetkilendirme iþlevini gerçekleþtirebilmek için cookie deðeri kullanýlmaktadýr. 
 Sisteme giriþ yapacak olan kullanýcýya özel tanýmlanmýþ claimler oluþturulan Cookie deðerinin içerisine eklenmekte ve lazým olduðu taktirde oradan eriþilmektedir. 
+---------------------------------------------------------------------------------
