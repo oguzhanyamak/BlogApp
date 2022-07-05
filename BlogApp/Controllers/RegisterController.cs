@@ -28,7 +28,7 @@ namespace BlogApp.Controllers
                     author.Status = true;
                     author.AuthorAbout = "";
                     author.AuthorImage = "";
-                    authorManager.AuthorAdd(author);
+                    authorManager.Add(author);
                     return RedirectToAction("Index", "Register");
                 }
             }

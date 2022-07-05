@@ -71,3 +71,27 @@ Claimler; rollerin dýþýnda kullanýcý hakkýnda bilgi tutmamýzý ve bu bilgilere gö
 Kullanýcýya dair tanýmlanmýþ ekstra bilgiler olan claimleri kullanarak yetkilendirme iþlevini gerçekleþtirebilmek için cookie deðeri kullanýlmaktadýr. 
 Sisteme giriþ yapacak olan kullanýcýya özel tanýmlanmýþ claimler oluþturulan Cookie deðerinin içerisine eklenmekte ve lazým olduðu taktirde oradan eriþilmektedir. 
 ---------------------------------------------------------------------------------
+EP 8 : Blog yazýlarýna ait istatistikleri tutmak için BlogRating tablosu oluþturulmuþtur.
+Ardýndan Triger yardýmý ile yeni eklenen bloglarýn ID deðerinin Rating tablosuna eklenmesi saðlanmýþtýr.
+-------------------------------------------------
+CREATE TRIGGER AddBlogIdInRatingTable
+ON Blogs AFTER INSERT
+AS 
+DECLARE @ID INT 
+SELECT @ID = Id FROM INSERTED
+INSERT INTO BlogRatings (BlogId,BlogTotalScore,BlogRatingCount)
+VALUES (@ID,0,0)
+-------------------------------------------------
+Yorum yapýlmasýnýn ardýndan yorum yapýlan blog'un Rating tablosunda gerekli iþlemler Trigger ile eklenmiþtir.
+----------------------------------------------------------
+CREATE TRIGGER UpdateBlogRatingCount
+ON Comments
+AFTER INSERT
+AS 
+DECLARE @ID INT 
+DECLARE @SCORE INT
+DECLARE @RATINGCOUNT INT
+SELECT @ID = BlogId,@SCORE = BlogScore FROM INSERTED
+UPDATE BlogRatings SET BlogTotalScore = BlogTotalScore + @SCORE, BlogRatingCount +=1 
+WHERE BlogId = @ID
+----------------------------------------------------------

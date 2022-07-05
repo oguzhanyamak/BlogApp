@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface IAuthorService 
+    public interface IAuthorService : IService<Author>
     {
-        void AuthorAdd(Author author);
-        void AuthorUpdate(Author author);
-
 
     }
 }
