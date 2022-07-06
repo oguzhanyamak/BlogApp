@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\Components\CommentList\" />
+    <Folder Include="wwwroot\AuthorImageFiles\" />
   </ItemGroup>
 
 </Project>
