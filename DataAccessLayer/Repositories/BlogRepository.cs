@@ -26,7 +26,7 @@ namespace DataAccessLayer.Repositories
                     case "Category" when (Id == 0):
                         return c.Blogs.Include(s => s.Category).ToList();
                     case "Category" when (Id != 0):
-                        return c.Blogs.Include(s => s.Category).Where(x => x.Category.Id == Id).ToList();
+                        return c.Blogs.Include(s => s.Category).Where(x => x.Id== Id).ToList();
                     case "Comment" when (Id != 0):
                         return c.Blogs.Include(s => s.Comments).Where(x => x.Id == Id).ToList();
                     case "Comment" when (Id == 0):

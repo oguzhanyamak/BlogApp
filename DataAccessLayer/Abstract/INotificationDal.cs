@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    public interface IAuthorDal:IGenericDal<Author>
+    public interface INotificationDal : IGenericDal<Notification>
     {
-        public int IdCheck(string email);
     }
 }

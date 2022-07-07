@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlogApp.ViewComponents.Blog
 {
-    [AllowAnonymous]
     public class BlogListDashboard : ViewComponent
     {
         BlogManager blogManager = new BlogManager(new BlogRepository());

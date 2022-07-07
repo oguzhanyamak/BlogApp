@@ -42,5 +42,10 @@ namespace BusinessLayer.Concrete
         {
             authorDal.Update(t);
         }
+
+        public int IdCheck(string email)
+        {
+            return authorDal.IdCheck(email);
+        }
     }
 }

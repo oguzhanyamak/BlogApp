@@ -2,11 +2,11 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/AuthorLayout.cshtml";
 }
-
+@model int
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    @await Component.InvokeAsync("AuthorDashboardStatistics")
+    @await Component.InvokeAsync("AuthorDashboardStatistics",new {id = Model})
     @await Component.InvokeAsync("BlogListDashboard")
     @await Component.InvokeAsync("CategoryListForDashboard")
 </body>

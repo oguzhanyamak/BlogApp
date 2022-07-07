@@ -9,6 +9,6 @@ namespace BusinessLayer.Abstract
 {
     public interface IAuthorService : IService<Author>
     {
-
+        int IdCheck(string email);
     }
 }

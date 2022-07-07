@@ -17,12 +17,12 @@ namespace BlogApp.Controllers
     {
         private BlogManager _blogManager = new BlogManager(new BlogRepository());
         private AuthorManager _authorManager = new AuthorManager(new AuthorRepository());
-
-
-        [AllowAnonymous]
+        int userId = 0;
+        
         public IActionResult Index()
-        { 
-            return View();
+        {
+            userId = _authorManager.IdCheck(User.Identity.Name);
+            return View(userId);
         }
 
         public IActionResult GetBlogsByAuthor(int id=1) 

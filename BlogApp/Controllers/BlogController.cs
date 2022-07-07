@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace BlogApp.Controllers
 {
-    [AllowAnonymous]
+    
     public class BlogController : Controller
     {
         private BlogManager _blogManager = new BlogManager(new BlogRepository());
@@ -21,6 +21,7 @@ namespace BlogApp.Controllers
 
         public IActionResult Index()
         {
+            
             var values = _blogManager.GetBlogWith("Category");
             return View(values);
         }
