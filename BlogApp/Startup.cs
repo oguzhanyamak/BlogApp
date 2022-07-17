@@ -26,7 +26,7 @@ namespace BlogApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-    
+
             services.AddControllersWithViews();
 
             services.AddSession();
@@ -58,7 +58,7 @@ namespace BlogApp
                 app.UseHsts();
             }
 
-            app.UseStatusCodePagesWithReExecute("/Error/Error404","?code={0}");//Hata durumunda yönledirilecek sayfalar
+            app.UseStatusCodePagesWithReExecute("/Error/Error404", "?code={0}");//Hata durumunda yönledirilecek sayfalar
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -71,6 +71,10 @@ namespace BlogApp
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                  name: "areas",
+                  pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Blog}/{action=Index}/{id?}");
