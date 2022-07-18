@@ -32,7 +32,7 @@ namespace BlogApp.Controllers
 
         public PartialViewResult Partial_CommentList(int id)
         {
-            var values = commentManager.GetList(id);
+            var values = commentManager.GetList();
             return PartialView(values);
         }
     }

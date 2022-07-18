@@ -99,3 +99,9 @@ Admin arayüzü eklendi
 Area altyapý hazýrlýklarý
 Sayfalama(Pagination) iþlemi için XPagedList paketi  kullanýldý.
 Excel raporlama iþlemi için ClosedXML paketi dahil edilmiþtir.
+-------------------------------------------------------------
+https://openweathermap.org/current Dashboard ekranýna hava durumu bilgisinin getirilmesi
+https://apilayer.com/marketplace/fixer-api üzerinden dashboard'a güncel kur bilgilerinin getirilmesi 
+Her iki Api kullanýmý içinde ücretsiz üye olup kendi apiKey bilginiz ile çalýþtýrabilirsiniz. 
+bir takým sayýsal bilginin ekrana eklenmesi saðlanmýþtýr.
+---------------------------------------------------------------

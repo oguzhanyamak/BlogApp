@@ -10,7 +10,7 @@ namespace BlogApp.Views.ViewComponents.Comment
         CommentManager commentManager = new CommentManager(new CommentRepository());
         public IViewComponentResult Invoke(int id)
         {
-            var values = commentManager.GetCommentByBlog(id);
+            var values = commentManager.GetById(id);
             return View(values);
         }
     }

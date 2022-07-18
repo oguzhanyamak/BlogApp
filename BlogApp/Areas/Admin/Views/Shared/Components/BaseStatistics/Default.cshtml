@@ -37,8 +37,8 @@
                             <i class="fa fa-cloud fa-5x"></i>
                         </div>
                         <div class="col-8 text-right">
-                            <span> Today degrees </span>
-                            <h2 class="font-bold">@ViewBag.v4 *C</h2>
+                            <span> İstanbul </span>
+                            <h2 class="font-bold">@ViewBag.temp °C</h2>
                         </div>
                     </div>
                 </div>
@@ -47,11 +47,11 @@
                 <div class="widget style1 lazur-bg">
                     <div class="row">
                         <div class="col-4">
-                            <i class="fa fa-envelope-o fa-5x"></i>
+                            <i class="fa fa-file-text-o fa-5x"></i>
                         </div>
                         <div class="col-8 text-right">
-                            <span> New messages </span>
-                            <h2 class="font-bold">260</h2>
+                            <span> Toplam Blog Sayısı </span>
+                            <h2 class="font-bold">@ViewBag.BlogCount</h2>
                         </div>
                     </div>
                 </div>
@@ -60,11 +60,11 @@
                 <div class="widget style1 yellow-bg">
                     <div class="row">
                         <div class="col-4">
-                            <i class="fa fa-music fa-5x"></i>
+                            <i class="fa fa-bars fa-5x"></i>
                         </div>
                         <div class="col-8 text-right">
-                            <span> New albums </span>
-                            <h2 class="font-bold">12</h2>
+                            <span> Kategoriler </span>
+                            <h2 class="font-bold">@ViewBag.CategoryCount</h2>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
                             <i class="fa fa-user fa-3x"></i>
                         </div>
                         <div class="col-9 text-right">
-                            <h2 class="font-bold">217</h2>
+                            <h2 class="font-bold">@ViewBag.AuthorCount</h2>
                         </div>
                     </div>
                 </div>
@@ -134,10 +134,10 @@
                 <div class="widget style1 navy-bg">
                     <div class="row vertical-align">
                         <div class="col-3">
-                            <i class="fa fa-thumbs-up fa-3x"></i>
+                            <i class="fa fa-comment-o fa-3x"></i>
                         </div>
                         <div class="col-9 text-right">
-                            <h2 class="font-bold">400</h2>
+                            <h2 class="font-bold">@ViewBag.CommentCount</h2>
                         </div>
                     </div>
                 </div>
@@ -158,10 +158,10 @@
                 <div class="widget style1 lazur-bg">
                     <div class="row vertical-align">
                         <div class="col-3">
-                            <i class="fa fa-phone fa-3x"></i>
+                            <i class="fa fa-dollar fa-3x"></i>
                         </div>
                         <div class="col-9 text-right">
-                            <h2 class="font-bold">120</h2>
+                            <h2 class="font-bold">@ViewBag.dollar</h2>
                         </div>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                             <i class="fa fa-euro fa-3x"></i>
                         </div>
                         <div class="col-9 text-right">
-                            <h2 class="font-bold">462</h2>
+                            <h2 class="font-bold">@ViewBag.Eur</h2>
                         </div>
                     </div>
                 </div>

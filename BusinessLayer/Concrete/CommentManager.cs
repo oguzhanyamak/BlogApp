@@ -9,34 +9,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class CommentManager : ICommentService
+    public class CommentManager : Manager<Comment>,ICommentService
     {
         private ICommentDal _commentDal;
 
-        public CommentManager(ICommentDal commentDal)
+        public CommentManager(IGenericDal<Comment> genericDal) : base(genericDal)
         {
-            _commentDal = commentDal;
+            _commentDal = (ICommentDal)genericDal;
         }
-
-        public void CommentAdd(Comment comment)
-        {
-            _commentDal.Insert(comment); 
-        }
-
-        public List<Comment> GetCommentByBlog(int id)
-        {
-            List<Comment> comment = _commentDal.GetCommentByBlog(id);
-            return comment;
-        }
-
-
-
-        public List<Comment> GetList(int id)
-        {
-            List<Comment> comments = _commentDal.GetAll().ToList();
-            return comments;
-        }
-
-
     }
 }
