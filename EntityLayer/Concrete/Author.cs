@@ -10,7 +10,6 @@ namespace EntityLayer.Concrete
 {
     public class Author : BaseClass
     {
-
         public string AuthorName { get; set; }
         public string AuthorAbout { get; set; }
         public string AuthorMail { get; set; }
@@ -18,7 +17,6 @@ namespace EntityLayer.Concrete
         [NotMapped]
         public string AuthorRePassword { get; set; }
         public string AuthorImage { get; set; }
-        public List<Blog> Blogs { get; set; }
-
+        public ICollection<Blog>? Blogs { get; set; }
     }
 }

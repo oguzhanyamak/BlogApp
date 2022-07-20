@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.FluentApiConfiguration;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete
 {
-    public class Context : DbContext
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -34,6 +35,7 @@ namespace DataAccessLayer.Concrete
             modelBuilder.ApplyConfiguration(new FluentApi_CategoryConf());
             modelBuilder.ApplyConfiguration(new FluentApi_CommentConf());
             modelBuilder.ApplyConfiguration(new FluentApi_ContactConf());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

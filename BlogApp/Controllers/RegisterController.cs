@@ -1,45 +1,56 @@
-﻿using BusinessLayer.Concrete;
-using BusinessLayer.FluentValidation;
-using DataAccessLayer.Repositories;
+﻿using BlogApp.Models;
 using EntityLayer.Concrete;
-using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BlogApp.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
-        AuthorManager authorManager = new AuthorManager(new AuthorRepository());
+
+        private readonly UserManager<AppUser> _userManager;
+
+        public RegisterController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
+
 
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Index(Author author)
+        public async Task<IActionResult> Index(AppUserRegisterModel appUserRegisterModel)
         {
-            AuthorValidator authorValidator = new AuthorValidator();
-            ValidationResult result = authorValidator.Validate(author);
-            if (result.IsValid)
+            if (ModelState.IsValid)
             {
-                if (author.AuthorPassword == author.AuthorRePassword)
+                AppUser user = new AppUser()
                 {
-                    author.Status = true;
-                    author.AuthorAbout = "";
-                    author.AuthorImage = "";
-                    authorManager.Add(author);
-                    return RedirectToAction("Index", "Register");
+                    Email = appUserRegisterModel.mail,
+                    Name = appUserRegisterModel.name,
+                    Surname = appUserRegisterModel.surname,
+                    UserName = appUserRegisterModel.mail.Split('@')[0]
+                };
+                var result = await _userManager.CreateAsync(user, appUserRegisterModel.password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
                 }
             }
-            else
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
+            return View(appUserRegisterModel);
         }
     }
 }

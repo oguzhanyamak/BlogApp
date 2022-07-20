@@ -11,7 +11,7 @@ namespace EntityLayer.Concrete
     {
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
-        public List<Blog> Blogs { get; set; }
+        public ICollection<Blog> Blogs { get; set; }
 
     }
 }

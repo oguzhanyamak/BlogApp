@@ -1,49 +1,49 @@
-﻿using DataAccessLayer.Concrete;
+﻿using BlogApp.Models;
 using EntityLayer.Concrete;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
+
 using System.Threading.Tasks;
 
 namespace BlogApp.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
-        [AllowAnonymous]
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
+
+        public LoginController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager)
+        {
+            _signInManager = signInManager;
+            _userManager = userManager;
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> Index(Author author)
+        public async Task<IActionResult> Index(AppUserLoginModel appUserLoginModel)
         {
-            using (Context c = new Context())
+
+            if (ModelState.IsValid)
             {
-                var value = c.Authors.FirstOrDefault(x => x.AuthorMail == author.AuthorMail && x.AuthorPassword == author.AuthorPassword);
-                if (value != null)
+                AppUser user =await _userManager.FindByEmailAsync(appUserLoginModel.mail);
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, appUserLoginModel.password, false, true);
+                if (result.Succeeded)
                 {
-                    var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name,author.AuthorMail)
-                    };
-                    var userIdentity = new ClaimsIdentity(claims,"a");
-                    ClaimsPrincipal principal = new(userIdentity);
-                    await HttpContext.SignInAsync(principal);
-                 //   HttpContext.Session.SetString("username", author.AuthorMail);
-                    return RedirectToAction("Index", "Author");
+                    return RedirectToAction("Index","Author");
                 }
                 else
                 {
-                    return View();
+                    return RedirectToAction("Index", "Login");
                 }
             }
-
+            return View();
         }
     }
 }

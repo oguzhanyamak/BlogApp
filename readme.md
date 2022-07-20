@@ -105,3 +105,15 @@ https://apilayer.com/marketplace/fixer-api üzerinden dashboard'a güncel kur bilg
 Her iki Api kullanýmý içinde ücretsiz üye olup kendi apiKey bilginiz ile çalýþtýrabilirsiniz. 
 bir takým sayýsal bilginin ekrana eklenmesi saðlanmýþtýr.
 ---------------------------------------------------------------
+Api altyapýsý hazýrlanmýþtýr.
+Sunum katmaný olarak Web.api oluþturulmasý ve gerekli methodlarýn tanýmlanmasý saðlanmýþtýr.
+Api özelliklerinin test edilip çalýþmasý kontrol edilmiþtir.
+---------------------------------------------------------------
+Sunum Katmaný
+Microsoft.AspNetCore.Identity
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+DataAccess
+Microsoft.Identity.Core
+Microsoft.AspNetCore.Identity.EntityFramework
+Identity iþleminin yapýlmasý kayýt ve login iþlemlerinin tamamlanmasý saðlanmýþtýr.
+---------------------------------------------------------------
