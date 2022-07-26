@@ -7,7 +7,7 @@
 <html lang="en">
 <body>
     @await Component.InvokeAsync("AuthorDashboardStatistics",new {id = Model})
-    @await Component.InvokeAsync("BlogListDashboard")
+    @await Component.InvokeAsync("BlogListDashboard",new {id = Model})
     @await Component.InvokeAsync("CategoryListForDashboard")
 </body>
 </html>

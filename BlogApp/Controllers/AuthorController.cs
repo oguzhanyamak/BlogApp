@@ -19,13 +19,13 @@ namespace BlogApp.Controllers
         private AuthorManager _authorManager = new AuthorManager(new AuthorRepository());
         int userId = 0;
         
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
-            userId = _authorManager.IdCheck(User.Identity.Name);
+            userId = id;
             return View(userId);
         }
 
-        public IActionResult GetBlogsByAuthor(int id=1) 
+        public IActionResult GetBlogsByAuthor(int id) 
         {
             //Gerçekten özür dilerim :D 
             List<Blog> res = _blogManager.GetBlogWith("Category");
@@ -34,7 +34,7 @@ namespace BlogApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult AuthorEditProfile(int id =1)
+        public IActionResult AuthorEditProfile(int id)
         {
             var author = _authorManager.GetById(id);
             return View(author);

@@ -117,3 +117,5 @@ Microsoft.Identity.Core
 Microsoft.AspNetCore.Identity.EntityFramework
 Identity iþleminin yapýlmasý kayýt ve login iþlemlerinin tamamlanmasý saðlanmýþtýr.
 ---------------------------------------------------------------
+26.07.2022 Sezon Finali ##
+------------------------

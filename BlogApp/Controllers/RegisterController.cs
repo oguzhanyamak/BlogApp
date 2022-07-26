@@ -1,4 +1,6 @@
 ﻿using BlogApp.Models;
+using BusinessLayer.Concrete;
+using DataAccessLayer.Repositories;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,6 +14,7 @@ namespace BlogApp.Controllers
     {
 
         private readonly UserManager<AppUser> _userManager;
+        private AuthorManager authorManager = new(new AuthorRepository());
 
         public RegisterController(UserManager<AppUser> userManager)
         {
@@ -40,6 +43,7 @@ namespace BlogApp.Controllers
                 var result = await _userManager.CreateAsync(user, appUserRegisterModel.password);
                 if (result.Succeeded)
                 {
+                    addAuthorDb(appUserRegisterModel);
                     return RedirectToAction("Index", "Login");
                 }
                 else
@@ -51,6 +55,21 @@ namespace BlogApp.Controllers
                 }
             }
             return View(appUserRegisterModel);
+        }
+
+
+        private void addAuthorDb(AppUserRegisterModel appUserRegisterModel)
+        {
+            Author author = new Author()
+            {
+                AuthorName = appUserRegisterModel.name,
+                AuthorAbout = "",
+                AuthorMail = appUserRegisterModel.mail,
+                AuthorPassword = appUserRegisterModel.password,
+                Status = true,
+                AuthorImage = "/AuthorLayout/images/faces/face10.jpg"
+            };
+            authorManager.Add(author);
         }
     }
 }

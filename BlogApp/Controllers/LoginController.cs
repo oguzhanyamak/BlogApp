@@ -1,9 +1,12 @@
 ﻿using BlogApp.Models;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BlogApp.Controllers
@@ -32,11 +35,12 @@ namespace BlogApp.Controllers
 
             if (ModelState.IsValid)
             {
-                AppUser user =await _userManager.FindByEmailAsync(appUserLoginModel.mail);
+                AppUser user = await _userManager.FindByEmailAsync(appUserLoginModel.mail);
                 var result = await _signInManager.PasswordSignInAsync(user.UserName, appUserLoginModel.password, false, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index","Author");
+                    Console.WriteLine(User.Identity.Name);
+                    return RedirectToAction("Index", "Author", new { id = user.Id });
                 }
                 else
                 {
@@ -47,3 +51,4 @@ namespace BlogApp.Controllers
         }
     }
 }
+
